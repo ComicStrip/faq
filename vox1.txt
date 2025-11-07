@@ -1,0 +1,58 @@
+Here’s the same information in plain text format:
+
+⸻
+
+Lady Vox’s problem is almost certainly caused by her computer refusing to connect to “http://umbrel.local” because it only allows HTTPS.
+
+Explanation:
+Umbrel’s local dashboard (umbrel.local) only uses HTTP by default. It is not a public website; it runs on your local network.
+Modern browsers like Chrome and Edge often force HTTPS connections to any address they’ve seen before, including “.local”.
+When that happens, the browser tries to go to “https://umbrel.local”, but Umbrel doesn’t have an HTTPS certificate for local use.
+That causes connection errors or “Not secure” warnings — which is exactly what she’s describing.
+
+⸻
+
+Fix Options:
+
+Option 1: Force HTTP manually
+Type this exactly in the browser’s address bar:
+http://umbrel.local
+Press Enter.
+Make sure there is no “s” in “http”.
+If it automatically changes to “https://”, continue with Option 2.
+
+⸻
+
+Option 2: Clear HSTS cache (for Chrome or Edge)
+	1.	In the browser address bar, type: chrome://net-internals/#hsts
+	2.	Under “Delete domain security policies,” type: umbrel.local
+	3.	Click “Delete.”
+	4.	Then go back and open: http://umbrel.local
+
+⸻
+
+Option 3: Access Umbrel by its local IP address
+If the above does not work, find Umbrel’s local IP address:
+	•	Check your router’s connected devices list for something named “umbrel”
+	•	Or use a phone app like “Fing” to scan your network
+
+Once you have the IP address, type it into your browser like this:
+http://192.168.1.42   (replace this number with the real address)
+
+⸻
+
+Option 4: Use Tor browser (optional)
+If Tor access is enabled in Umbrel, you can connect through the .onion address using Tor Browser.
+That uses HTTPS automatically and avoids local network issues.
+
+⸻
+
+Summary:
+Problem: Browser forces HTTPS, Umbrel only serves HTTP locally.
+Fix: Access using http://umbrel.local or http://.
+If the browser keeps switching to HTTPS, clear the HSTS cache.
+Tor browser is an optional secure alternative.
+
+⸻
+
+Would you like me to include simple step-by-step instructions for finding the Umbrel IP address on Windows or macOS?
