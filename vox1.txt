@@ -1,6 +1,4 @@
-Here’s the same information in plain text format:
 
-⸻
 
 Lady Vox’s problem is almost certainly caused by her computer refusing to connect to “http://umbrel.local” because it only allows HTTPS.
 
@@ -55,4 +53,3 @@ Tor browser is an optional secure alternative.
 
 ⸻
 
-Would you like me to include simple step-by-step instructions for finding the Umbrel IP address on Windows or macOS?
